@@ -1,4 +1,4 @@
-![progress-banner](https://codecrafters.io/landing/images/default_progress_banners/redis.png)
+![progress-banner](https://app.codecrafters.io/progress/redis/817650d1-a752-47aa-a381-84c84c2a45b3)
 
 This is a starting point for C solutions to the
 ["Build Your Own Redis" Challenge](https://codecrafters.io/challenges/redis).

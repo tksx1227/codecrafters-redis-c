@@ -40,5 +40,7 @@ int listen(int socket, int backlog);
 int accept(int socket, struct sockaddr *restrict address, socklen_t *restrict address_len);
 ```
 
-## その他メモ
+## 参考リンク
 [ストリームとファイル記述子の違い](https://www.gnu.org/software/libc/manual/html_node/Streams-and-File-Descriptors.html)
+
+[ソケット通信を行うサーバープログラムの全体像](http://research.nii.ac.jp/~ichiro/syspro98/server.html)

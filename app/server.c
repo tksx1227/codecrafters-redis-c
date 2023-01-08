@@ -59,9 +59,25 @@ int main() {
     }
 	printf("Client connected\n");
 
-    // Temporarily hardcode for stage 2
-    write(connection_fd, "+PONG\r\n", 7);
+    // Read and write loop
+    while (1) {
+        // Recieve message from client
+        char buffer[1024];
+        ssize_t rc = recv(connection_fd, buffer, 1024, 0);
+        if (rc < 0) {
+            printf("Recieve from client error: %s \n", strerror(errno));
+        } else if (rc == 0) {
+            break;
+        }
 
+        // Send message to client
+        char *response = "+PONG\r\n";
+        if (send(connection_fd, response, strlen(response), 0) < 0) {
+            printf("Send to client error: %s \n", strerror(errno));
+        }
+    }
+
+    printf("Bye :)\n");
 	close(server_fd);
     close(connection_fd);
 
